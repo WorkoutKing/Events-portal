@@ -1,7 +1,7 @@
 @extends('main')
 @section('content')
 @include('_partials/errors')
-<div class="container">
+<div class="container" style="width:100%;min-height: 40rem;">
 @if(auth()->user()->name === 'admin')
 <div class="card d-flex justify-content-center" style="width: 14rem; ">
     <img class="card-img-top" src="https://thumbs.dreamstime.com/b/admin-sign-laptop-icon-stock-vector-166205404.jpg">
@@ -20,7 +20,7 @@
  <div>
  Email: <b>{{Auth::user()->email}}</b>
  </div>
- <a href="/useritemlist" class="btn btn-success">Your item list</a>
- <a href="/usercompanylist" class="btn btn-success ">Your company list</a>
+ <a href="/approve" class="btn btn-danger">Waiting to be approved</a>
+ <a href="/my-events" class="btn btn-success ">Your events list</a>
 </div>
 @endsection

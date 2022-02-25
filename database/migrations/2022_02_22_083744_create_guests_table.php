@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateShopinghistoryTable extends Migration
+class CreateGuestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateShopinghistoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('shopinghistories', function (Blueprint $table) {
+        Schema::create('guests', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('company_id');
-            $table->string('item_name');  
-            $table->longText('description');
-            $table->bigInteger('price');
+            $table->string('name');
+            $table->string('email');
+            $table->integer('phone');
+            $table->boolean('status')->default(0);
+            $table->foreignId('events_id');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateShopinghistoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shopinghistories');
+        Schema::dropIfExists('guests');
     }
 }

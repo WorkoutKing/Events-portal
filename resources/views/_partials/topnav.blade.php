@@ -1,25 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-    <div class="container-fluid">
-        <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                @if(Auth::check())   
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Hello, <b style="text-transform: uppercase;">{{Auth::user()->name}}</b>
-                </a>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/logout">Logout</a>
-                        <a class="dropdown-item" href="/dashboard">Dashboard</a>
-                </li>
-                @else
-                <div class="row mx-md-n5">
-                    <div class="col px-md-2"><a class="btn btn-primary " href="/login">Login</a></div>
-                    <div class="col px-md-2"><a class="btn btn-success" href="/register">Register</a></div>
-                </div>
-                @endif
-            </ul>
-        </div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-around">
+    <div >
+    <a class="navbar-brand" href="/">Event Portal</a>
     </div>
-</nav>
+    <div class="d-flex justify-content-between ">
+    <div>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About Project</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacts">Contacts</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/all-events">Events</a>
+          </li>
+      @if(Auth::check())
+      <li class="nav-item">
+        <a class="nav-link" href="/profile">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+        @else
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Register</a>
+          </li>
+            @endif
+        </ul>
+    </div>
+    </div>
+  </nav>
