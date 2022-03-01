@@ -22,5 +22,7 @@
  </div>
  <a href="/approve" class="btn btn-danger">Waiting to be approved</a>
  <a href="/my-events" class="btn btn-success ">Your events list</a>
+ <a href="/add-event" class="btn btn-primary ">Add event</a>
+
 </div>
 @endsection
